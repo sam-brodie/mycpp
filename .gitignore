@@ -3,6 +3,12 @@
 ##
 ## Get latest from https://github.com/github/gitignore/blob/master/VisualStudio.gitignore
 
+#SAM ADDED
+*.sln
+*mycpp.vcxproj
+*mycpp.vcxproj.filters
+
+
 # User-specific files
 *.rsuser
 *.suo
