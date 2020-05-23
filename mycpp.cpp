@@ -3,46 +3,42 @@
 
 #include <iostream>
 #include <vector>
+#include<string>
 using namespace::std;
 
-inline void takeInputs(std::vector<int> &v)
-{
-    int num;
-    while (std::cin >> num)
-    {
-        v.push_back(num);
-    }
-}
+//inline void takeInputs(std::vector<int> &v)
+//{
+//    int num;
+//    while (std::cin >> num)
+//    {
+//        v.push_back(num);
+//    }
+//}
 
-int recFunc(std::vector<int> v, int pos)
-{
-    if (pos == v.size()) return 0;
-    return v[pos] + recFunc(v, pos + 1);
+inline std::vector<std::string> combi(int list1[], char list2[]) {
+    std::vector<std::string> v;
+
+    for (int i = 0; i < sizeof(list1); i++) {
+		v.push_back(to_string(list1[i]));
+		v.push_back(string(1, list2[i]));
+    }
+    return v;
 }
 
 int main()
 {
     std::vector<int> numbers;
     std::cout << "Hello World!" << endl;
-    takeInputs(numbers);
+    //takeInputs(numbers);
 
-    int sum = 0;
-    //for loop
-    //for (int i = 0; i < numbers.size(); i++) {
-    //    sum += numbers[i];
-    //}
+    int list1[] = { 11, 22, 3, 4 };
+    char list2[] = { 'a', 'b', 'c', 'd' };
 
-    //while loop
-    //int cnt = 0;
-    //while(cnt < numbers.size()) {
-    //    sum += numbers[cnt];
-    //    cnt++;
-    //}
+    std::vector<std::string> conc_list = combi(list1, list2);
 
-    //recursion
-    //sum = recFunc(numbers, 0);
-
-    std::cout << "sum is : " << sum << endl;
+    for (size_t i = 0; i < conc_list.size(); i++) {
+        std::cout << conc_list[i] << endl;
+    }
 }
 
 // Run program: Ctrl + F5 or Debug > Start Without Debugging menu
